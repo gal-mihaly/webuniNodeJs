@@ -45,6 +45,12 @@ initDb((err, {userModel, twiteModel, saveDB }) => {
   }
 
   app.use('/', router({ userModel, twiteModel, saveDB, uuidv4  }));
+
+  // default error handling
+  app.use((err, req, res, next) => {
+    console.error(err.stack);
+    return res.render("pages/404");
+  })
   
   const server = app.listen(7000, () => {
     console.log(`The application started on port ${server.address().port}`);
