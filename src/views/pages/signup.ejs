@@ -1,0 +1,101 @@
+
+<!-- Application header-->
+<%- include('../header') -%>
+
+  <section class="h-100">
+    <div class="container h-100">
+      <div class="row justify-content-sm-center h-100">
+        <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+          <div class="text-center my-5">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Twitter-logo.svg" alt="logo" width="100" />
+          </div>
+          <div class="card shadow-lg">
+            <div class="card-body p-5">
+              <h1 class="fs-4 card-title fw-bold mb-4">Registration</h1>
+              <form method="POST" class="needs-validation" action="/signup" novalidate="" autocomplete="off">
+                <!-- first name -->
+                <div class="mb-3">
+                  <label class="mb-2 text-muted" for="firstname">First name</label>
+
+                  <input id="firstname" type="text" tabindex="1"
+                    class="form-control <%= errors.firstName ? 'is-invalid' : '' %>" name="firstname"
+                    value="<%= values.firstName %>" autofocus />
+                  <div class="invalid-feedback">
+                    <%= errors.firstName %>
+                  </div>
+                </div>
+
+                <!-- last name -->
+                <div class="mb-3">
+                  <label class="mb-2 text-muted" for="lastname">Last name</label>
+
+                  <input id="lastname" type="text" tabindex="2"
+                    class="form-control <%= errors.lastName ? 'is-invalid' : '' %>" name="lastname"
+                    value="<%= values.lastName %>" autofocus />
+                  <div class="invalid-feedback">
+                    <%= errors.lastName %>
+                  </div>
+                </div>
+
+                <!-- email -->
+                <div class="mb-3">
+                  <label class="mb-2 text-muted" for="email">E-Mail Address</label>
+
+                  <input id="email" type="email" tabindex="3"
+                    class="form-control <%= errors.email ? 'is-invalid' : '' %>" name="email"
+                    value="<%= values.email %>" />
+                  <div class="invalid-feedback">
+                    <%= errors.email %>
+                  </div>
+                </div>
+
+                <!-- password -->
+                <div class="mb-3">
+                  <div class="mb-2 w-100">
+                    <label class="text-muted" for="password">Password</label>
+                  </div>
+                  <input id="password" type="password" tabindex="4"
+                    class="form-control <%= errors.password ? 'is-invalid' : '' %>" name="password"
+                    value="<%= values.password %>" />
+                  <div class="invalid-feedback">
+                    <%= errors.password %>
+                  </div>
+                </div>
+
+                <!-- confirm password -->
+                <div class="mb-3">
+                  <div class="mb-2 w-100">
+                    <label class="text-muted" for="password_confirmed">Confirm Password</label>
+                  </div>
+                  <input id="password_confirmed" type="password" tabindex="5"
+                    class="form-control <%= errors.passwordConfirmed ? 'is-invalid' : '' %>" name="password_confirmed"
+                    value="<%= values.passwordConfirmed %>" />
+                  <div class="invalid-feedback">
+                    <%= errors.passwordConfirmed %>
+                  </div>
+                </div>
+
+                <div class="d-flex align-items-center">
+                  <button type="submit" tabindex="6" class="btn btn-primary ms-auto">
+                    Register
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="card-footer py-3 border-0">
+              <div class="text-center">Don you allready have an account?</div>
+              <div class="text-center">
+                <a tabindex="7" href="/login" class="text-dark">sign in</a>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-5 text-muted">
+            Node.js alapú backend fejlesztés @galmihaly
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<%- include('../footer') -%>

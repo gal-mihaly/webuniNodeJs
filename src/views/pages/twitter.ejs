@@ -1,0 +1,22 @@
+
+<!-- Application header-->
+<%- include('../header') -%>
+
+  <!-- Responsive navbar-->
+  <%- include('../navbar') -%>
+
+  <!-- Page content-->
+  <div class="container">
+    <h1 class="text-info mt-5"><strong>Twites of <%= values.owner.firstName %> <%= values.owner.lastName %> </strong></h1>
+
+    <% for (let [index,data] of values.twites.entries() || []) { %>
+      <ul class="list-unstyled" ID="<%= data.ID %>">
+        <%- include('../twite',{data}) -%>
+      </ul>
+    <% } %>
+
+    <a href="/twitters" role="button">BACK</a>
+
+  </div>
+
+<%- include('../footer') -%>

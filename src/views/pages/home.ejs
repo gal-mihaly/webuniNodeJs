@@ -1,0 +1,33 @@
+<!-- Application header-->
+<%- include('../header') -%>
+
+  <!-- Responsive navbar-->
+  <%- include('../navbar') -%>
+
+    <!-- Page content-->
+    <div class="container">
+
+        <%- include('../newtwite') -%>
+
+        <div class="text-center mt-5 mb-5 <%= values.isLogedInUser ? '' : 'd-none' %>">
+          <h1>Your daily twits</h1>
+          <p class="lead">Have a nice reading!</p>
+          <p>:)</p>
+        </div>
+
+        <div class="text-center mt-5 mb-5 <%= !values.isLogedInUser ? '' : 'd-none' %>">
+          <h1>Please login for write your twite!</h1>
+          <a href="/login" class="card-link">Login</a>
+        </div>
+
+        <% for (let [index,data] of values.twites.entries() || []) { %>
+          <ul class="list-unstyled" ID="<%= data.ID %>">
+            <%- include('../twite',{data}) -%>
+          </ul>
+          <% } %>
+
+
+    </div>
+
+
+<%- include('../footer') -%>

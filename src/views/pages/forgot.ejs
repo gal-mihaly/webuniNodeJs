@@ -1,0 +1,77 @@
+<!-- Application header-->
+<%- include('../header') -%>
+
+    <section class="h-100">
+      <div class="container h-100">
+        <div class="row justify-content-sm-center h-100">
+          <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+            <div class="text-center my-5">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Twitter-logo.svg"
+                alt="logo"
+                width="100"
+              />
+            </div>
+            <div class="card shadow-lg">
+              <div class="card-body p-5">
+                <h1 class="fs-4 card-title fw-bold mb-4">
+                  Forgot your password
+                </h1>
+
+                <small
+                  >Please, type in your email address for resending your
+                  password.</small
+                >
+
+                <form
+                  method="POST"
+                  action="/forgot"
+                  class="needs-validation pt-5"
+                  novalidate=""
+                  autocomplete="off"
+                >
+                  <div class="mb-3">
+                    <label class="mb-2 text-muted" for="email"
+                      >E-Mail Address</label
+                    >
+
+                    <input
+                      id="email"
+                      tabindex="1"
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      required
+                      autofocus
+                    />
+                    <div class="invalid-feedback">Email is invalid</div>
+                  </div>
+
+                  <div class="d-flex align-items-center">
+                    <button
+                      tabindex="3"
+                      type="submit"
+                      class="btn btn-primary ms-auto"
+                    >
+                      Request
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer py-3 border-0">
+                <div class="text-center">
+                  Don't have an account?
+                  <a tabindex="5" href="/signup" class="text-dark">sign up</a>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-5 text-muted">
+              Node.js alapú backend fejlesztés @galmihaly
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+<%- include('../footer') -%>

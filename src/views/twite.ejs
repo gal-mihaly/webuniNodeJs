@@ -1,0 +1,26 @@
+<li>
+  <div class="card mb-2">
+    <div class="card-header bg-info font-monospace">
+      <%= data.author %>
+    </div>
+    <div class="card-body">
+      <p class="card-title text-left fw-bold">
+        <%= data.title %>
+      </p>
+
+      <% for (let [index2,data2] of (data.twite.split(/\r|\n/)).entries() || []) { %>
+        <p class="card-text text-justify">
+          <%= data2 %>
+        </p>
+        <% } %>
+
+          <p class="fw-lighter fst-italic small text-end">
+            <%= data.time %>
+          </p>
+          <% if(data.author==='me' ) { %>
+            <a href="/twites/edit/<%= data.ID %>" class="card-link">edit</a>
+            <a href="/twites/delete/<%= data.ID %>" class="card-link">remove</a>
+            <% } %>
+    </div>
+  </div>
+</li>

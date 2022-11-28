@@ -1,0 +1,41 @@
+<!-- Application header-->
+<%- include('../header') -%>
+
+  <section class="h-100">
+    <div class="container h-100">
+      <p class="mt-5 fs-4 fw-bold font-monospace text-info">
+        Youe are editing your twite
+      </p>
+
+      <div class="card-body">
+        <form method="POST" action="/twites/edit/<%= values.id %>">
+          <div class="form-group m-3">
+            <input class="form-control <%= errors.title ? 'is-invalid' : '' %>" type="text" id="title" name="title"
+              placeholder="Title" value="<%= values.title %>" />
+            <div class="invalid-feedback">
+              <%= errors.title %>
+            </div>
+          </div>
+
+          <div class="form-group m-3">
+            <textarea class="form-control <%= errors.twite ? 'is-invalid' : '' %>" placeholder="Your text twite"
+              style="overflow: auto; resize: none" id="twite" name="twite" rows="5" style="text-align: left">
+<%= values.twite %></textarea>
+            <div class="invalid-feedback">
+              <%= errors.twite %>
+            </div>
+          </div>
+
+          <div class="form-row mb-2 d-flex justify-content-center">
+            <a href="/home" class="btn btn-outline-info m-3">CANCEL</a>
+            <button class="btn btn-danger m-3 w-25" type="submit">
+              SAVE
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+<%- include('../footer') -%>

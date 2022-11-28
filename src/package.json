@@ -1,0 +1,29 @@
+{
+  "name": "vizsga",
+  "version": "0.0.1",
+  "description": "nodejs vizsgafeladat",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "ejs",
+    "lokijs"
+  ],
+  "author": "gal mihaly",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "ejs": "^3.1.8",
+    "email-validator": "^2.0.4",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "lokijs": "^1.5.12",
+    "uuid": "^9.0.0"
+  }
+}

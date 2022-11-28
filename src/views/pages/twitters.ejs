@@ -1,0 +1,25 @@
+
+<!-- Application header-->
+<%- include('../header') -%>
+
+<!-- Responsive navbar-->
+<%- include('../navbar') -%>
+
+  <!-- Page content-->
+  <div class="container">
+    <h1 class="text-info mt-5"><strong>List of twitters</strong></h1>
+
+    <ul class="list-unstyled">
+      <% for (let [index,data] of values.twitters.entries() || []) { %>
+        <li>
+          <a type="button" class="btn btn-link" href="/twitter/<%= data.ID %>" >
+            @<%= data?.firstName %> <%= data?.lastName %>
+          </a>
+        </li>
+      <% } %>
+    </ul>
+
+
+  </div>
+
+<%- include('../footer') -%>
